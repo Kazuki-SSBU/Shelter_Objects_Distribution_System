@@ -1,5 +1,5 @@
 # Project Description 
-- The purpose of this project is to facilitate the efficient allocation of essential supplies from available inventory to shelters.
+- The purpose of this project is to facilitate the efficient allocation of essential supplies from available stores to shelters.
 - To accomplish this, a resource distribution system for shelters was created.
 - This system was developed through an internship at Rakuten.
 # My Role
