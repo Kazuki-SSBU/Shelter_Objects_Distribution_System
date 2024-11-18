@@ -1,10 +1,14 @@
+# Project Description 
+- The purpose of this project is to facilitate the efficient allocation of essential supplies from available inventory to shelters.
+- To accomplish this, a resource distribution system for shelters was created.
+- This system was developed through an internship at Rakuten.
 # My Role
 - Obtain product information from Rakuten Ichiba API
 - Manage product information in database
 
 ![image](https://github.com/user-attachments/assets/2078015f-87c8-46ce-b045-f1a862d4fe13)
 
-# USAGE
+## USAGE Technology
 ![image](https://github.com/user-attachments/assets/8aa19c29-2b11-4566-ac04-bc4643d4d686)
 
 ## Web Interface design
