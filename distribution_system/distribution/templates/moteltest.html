@@ -1,0 +1,12 @@
+object_list:{{object_list}}
+
+{% for item in object_list %}
+  <li>item:{{item}}</li>
+  <li>item.category:{{item.category}}</li>
+  <li>item.item_name:{{item.item_name}}</li>
+  <li>item.request_num:{{item.request_num}}</li>
+  <li>item.stock_num:{{item.stock_num}} </li>
+  <li>item.address:{{item.address}} </li>
+  <li>item.name:{{item.name}} </li>
+{% endfor %}
+

@@ -1,0 +1,153 @@
+<!-- <h1>{{sample_var1}}</h1>
+<h2>{{sample_var2}}</h2> -->
+
+<!-- test -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>フォーム</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-sm">
+        <!-- <form> {% csrf_token %}
+            <div class="form-group mt-3">
+                <label class="control-label">カテゴリ</label>
+                <div class="radio">
+                    <label><input type="radio" name="radio">食品</label>
+                    <label><input type="radio" name="radio">日用品</label>
+                    <label><input type="radio" name="radio">医療品</label>
+                    <label><input type="radio" name="radio">子供用品</label>
+                    <label><input type="radio" name="radio">女性用品</label>
+                    <label><input type="radio" name="radio">高齢者用品</label>
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <label class="control-label">物資名</label>
+                <select class="form-control">
+                    <option>選択肢1</option>
+                    <option>選択肢2</option>
+                    <option>選択肢3</option>
+                    <option>選択肢4</option>
+                    <option>選択肢5</option>
+                </select>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <div class="form-group">
+                        <label class="control-label">必要個数</label>
+                        <input class="form-control" type="number">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label class="control-label">在庫数</label>
+                        <input class="form-control" type="number">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <label class="control-label">依頼主名</label>
+                <input class="form-control" type="text">
+            </div>
+            <div class="form-group mt-3">
+                <label class="control-label">依頼主住所</label>
+                <input class="form-control" type="text">
+            </div>
+            <button class="btn btn-primary mt-3">依頼送信</button>
+        </form> -->
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group mt-3">
+                <label class="control-label">カテゴリ</label>
+                {{ form.category.label_tag }}
+                <div class="form-check form-check-inline">
+                    {% for radio in form.category %}
+                        <div class="form-check form-check-inline">
+                            {{ radio.tag }}
+                            <label class="form-check-label">{{ radio.choice_label }}</label>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- <div class="form-check">
+                    {{ form.category }}
+                </div> -->
+            </div>
+            <div class="form-group mt-3">
+                <label class="control-label">物資名</label>
+                {{ form.item_name }}
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <div class="form-group">
+                        {{ form.request_num.label_tag }}
+                        {{ form.request_num }}
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        {{ form.stock_num.label_tag }}
+                        {{ form.stock_num }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <label class="control-label">依頼主名</label>
+                {{ form.name.label_tag }}
+                {{ form.name }}
+            </div>
+            <div class="form-group mt-3">
+                <label class="control-label">依頼主住所</label>
+                {{ form.address.label_tag }}
+                {{ form.address }}
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">依頼送信</button>
+        </form>
+
+
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+
+    </div>
+<!-- 
+    <h1>ユーザーフォーム</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">送信</button>
+    </form> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+
+</html>
